@@ -42,6 +42,8 @@ export function Post({ author, publishedAt, content }) {
     setNewCommentText(event.target.value);
   }
 
+  function onDeleteComment(comment) {}
+
   return (
     <article className={styles.post}>
       <header>
@@ -67,8 +69,9 @@ export function Post({ author, publishedAt, content }) {
             return <p key={line.content}>{line.content}</p>;
           } else if (line.type === "link") {
             return (
-              <p key={}>
-                <a href="#">{line.content}</a>
+              <p key={line.content}>
+                <a href="#">{line.content}</a>git commit -m "React Engines -
+                Communication between components"
               </p>
             );
           }
@@ -92,7 +95,11 @@ export function Post({ author, publishedAt, content }) {
 
       <div className={styles.commentList}>
         {comments.map((comment) => (
-          <Comment key={comment} content={comment} />
+          <Comment
+            key={comment}
+            content={comment}
+            deleteComment={onDeleteComment}
+          />
         ))}
       </div>
     </article>
