@@ -85,8 +85,7 @@ export function Post({ author, publishedAt, content }) {
           } else if (line.type === "link") {
             return (
               <p key={line.content}>
-                <a href="#">{line.content}</a>git commit -m "React Engines -
-                Communication between components"
+                <a href="#">{line.content}</a>
               </p>
             );
           }
